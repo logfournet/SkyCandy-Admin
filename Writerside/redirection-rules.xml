@@ -10,4 +10,12 @@
         <description>Created after removal of "Thông Tin" from SkyCandy Plugin</description>
         <accepts>Thông-Tin.html</accepts>
     </rule>
+    <rule id="d879564">
+        <description>Created after removal of "Thông Tin" from SkyCandy Plugin</description>
+        <accepts>Thông-Tin.html</accepts>
+    </rule>
+    <rule id="6d8451e1">
+        <description>Created after removal of "Bắt Đầu" from SkyCandy Plugin</description>
+        <accepts>Bắt-Đầu.html</accepts>
+    </rule>
 </rules>
