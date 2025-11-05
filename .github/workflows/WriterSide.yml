@@ -1,0 +1,46 @@
+name: Build and Deploy WriterSide Docs
+
+# Chạy tự động mỗi khi bạn 'push' code lên nhánh 'main'
+on:
+  push:
+    branches:
+      - main
+
+# Cấp quyền cho Action để ghi vào repo và deploy
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  # Job 1: Build website
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Lấy mã nguồn của bạn về
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Sử dụng Action của JetBrains để build website
+      - name: Build WriterSide
+        uses: JetBrains/writerside-github-action@v5
+        # Action này sẽ tự động tìm file .cfg và build ra
+        # website trong một thư mục tên là 'artifacts'
+
+      # Tải lên website đã build (artifact)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'artifacts' # Thư mục output mặc định
+
+  # Job 2: Deploy website (chỉ chạy sau khi build thành công)
+  deploy:
+    needs: build-deploy # Phải chờ job 'build-deploy' xong
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # Lấy URL của trang
+    steps:
+      # Deploy website lên GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
