@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="sp"
+                 name="SkyCandy Plugin"
+                 start-page="starter-topic.md">
+
+    <toc-element topic="starter-topic.md">
+        <toc-element topic="Thông-Tin.md"/>
+        <toc-element topic="Lệnh.md"/>
+    </toc-element>
+</instance-profile>
