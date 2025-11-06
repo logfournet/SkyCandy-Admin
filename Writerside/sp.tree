@@ -11,7 +11,9 @@
         <toc-element topic="Lệnh.md"/>
         <toc-element topic="Cấu-Trúc-Pack.md"/>
         <toc-element topic="Xây-Dựng-Pack.md">
-            <toc-element topic="Vật-Phẩm-Custom.md"/>
+            <toc-element topic="Về-Vật-Phẩm.md">
+                <toc-element topic="Thêm-Model-Item.md"/>
+            </toc-element>
         </toc-element>
     </toc-element>
 </instance-profile>
